@@ -41,3 +41,28 @@ model Area {
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 }
+
+model Rock {
+  id               Int     @id @default(autoincrement())
+  area_id          String  @db.VarChar(255)
+  name             String  @db.VarChar(255)
+  slug             String  @db.VarChar(255)
+  nr               Int     @db.SmallInt
+  description      String  @db.Text
+  access           String  @db.Text
+  nature           String  @db.Text
+  zone             Int     @db.SmallInt
+  banned           Int     @db.SmallInt
+  height           Int?    @db.SmallInt
+  orientation      String  @db.VarChar(50)
+  season           String  @db.VarChar(50)
+  sunny            String  @db.VarChar(50)
+  rain             String  @db.VarChar(50)
+  image            String  @db.VarChar(255)
+  header_image     String  @db.VarChar(255)
+  topo             Int     @db.SmallInt
+  latitude         Float?  @db.Float
+  longitude        Float?  @db.Float
+  online           Boolean @default(true)
+  path_coordinates Json
+}
