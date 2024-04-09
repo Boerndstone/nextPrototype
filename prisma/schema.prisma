@@ -32,12 +32,12 @@ model Area {
   orientation    String   @db.VarChar(25)
   sequence       Int      @db.SmallInt
   online         Boolean  @default(true)
-  image          String   @db.VarChar(255)
-  header_image   String   @db.VarChar(255)
-  latitude       Float    @db.Float
-  longitude      Float    @db.Float
-  zoom           Int      @db.TinyInt
-  rock_supporter String   @db.VarChar(255)
+  image          String?  @db.VarChar(255)
+  header_image   String?  @db.VarChar(255)
+  latitude       Float?   @db.Float
+  longitude      Float?   @db.Float
+  zoom           Int?     @db.TinyInt
+  rock_supporter String?  @db.VarChar(255)
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 }
