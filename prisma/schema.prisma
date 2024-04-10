@@ -44,7 +44,7 @@ model Area {
 
 model Rock {
   id               Int     @id @default(autoincrement())
-  area_id          String  @db.VarChar(255)
+  area_id          Int     @db.SmallInt
   name             String  @db.VarChar(255)
   slug             String  @db.VarChar(255)
   nr               Int     @db.SmallInt
@@ -56,13 +56,33 @@ model Rock {
   height           Int?    @db.SmallInt
   orientation      String  @db.VarChar(50)
   season           String  @db.VarChar(50)
-  sunny            String  @db.VarChar(50)
-  rain             String  @db.VarChar(50)
+  child_friendly   Int?    @db.SmallInt
+  sunny            Int?    @db.SmallInt
+  rain             Int?    @db.SmallInt
   image            String  @db.VarChar(255)
   header_image     String  @db.VarChar(255)
   topo             Int     @db.SmallInt
   latitude         Float?  @db.Float
   longitude        Float?  @db.Float
   online           Boolean @default(true)
-  path_coordinates Json
+  path_coordinates Json?
+}
+
+model Routes {
+  id                  Int     @id @default(autoincrement())
+  area_id             Int     @db.SmallInt
+  rock_id             Int     @db.SmallInt
+  name                String  @db.VarChar(255)
+  grade               String  @db.VarChar(20)
+  climbed             Boolean @default(false)
+  first_ascent        String  @db.VarChar(100)
+  year_first_ascent   Int     @db.SmallInt
+  protection          Int     @db.SmallInt
+  description         String  @db.Text
+  scale               String  @db.VarChar(100)
+  grade_no            Int     @db.SmallInt
+  rating              Int     @db.SmallInt
+  topo_id             Int     @db.SmallInt
+  nr                  Int     @db.SmallInt
+  relates_to_route_id Int     @db.SmallInt
 }
