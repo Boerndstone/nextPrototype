@@ -16,22 +16,19 @@ const IssueDetailPage = async ({ params }: Props) => {
     where: { id: parseInt(params.id) },
   });
 
-  if (!issue) {
-    notFound();
-  } else {
-    return (
-      <div>
-        <Heading>{issue.title}</Heading>
-        <Flex gap="3" my="2">
-          <IssueStatusBadge status={issue.status}></IssueStatusBadge>
-          <Text>{issue.createdAt.toDateString()}</Text>
-        </Flex>
-        <Card className="prose">
-          <ReactMarkdown>{issue.description}</ReactMarkdown>
-        </Card>
-      </div>
-    );
-  }
+  if (!issue) notFound();
+  return (
+    <div>
+      <Heading>{issue.title}</Heading>
+      <Flex gap="3" my="2">
+        <IssueStatusBadge status={issue.status}></IssueStatusBadge>
+        <Text>{issue.createdAt.toDateString()}</Text>
+      </Flex>
+      <Card className="prose">
+        <ReactMarkdown>{issue.description}</ReactMarkdown>
+      </Card>
+    </div>
+  );
 };
 
 export default IssueDetailPage;

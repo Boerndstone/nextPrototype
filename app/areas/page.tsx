@@ -29,7 +29,9 @@ const issuesPage = async () => {
         <Table.Body>
           {areas.map((area) => (
             <Table.Row key={area.id}>
-              <Table.Cell>{area.name}</Table.Cell>
+              <Table.Cell>
+                <Link href={`/areas/${area.id}`}>{area.name}</Link>
+              </Table.Cell>
               <Table.Cell>{area.orientation}</Table.Cell>
               <Table.Cell>{area.online}</Table.Cell>
             </Table.Row>
