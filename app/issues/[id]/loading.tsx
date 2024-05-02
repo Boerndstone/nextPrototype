@@ -1,8 +1,6 @@
 import { Box, Card, Flex, Heading } from "@radix-ui/themes";
 import React from "react";
-import ReactMarkdown from "react-markdown";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
+import { Skeleton } from "@/app/components";
 
 const LoadingIssueDetailPage = () => {
   return (
