@@ -1,4 +1,4 @@
-import { Box, Card, Flex, Heading } from "@radix-ui/themes";
+import { Box, Card, Flex } from "@radix-ui/themes";
 import React from "react";
 import { Skeleton } from "@/app/components";
 
